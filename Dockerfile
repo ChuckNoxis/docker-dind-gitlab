@@ -1,4 +1,4 @@
-FROM docker:23.0.4-dind as upstream
+FROM docker:27.3.1-dind AS upstream
 
 # copy everything to a clean image, so we can change the exposed ports
 # see https://gitlab.com/search?search=Service+docker+dind+probably+didn%27t+start+properly&nav_source=navbar&project_id=250833&group_id=9970&scope=issues&sort=updated_desc
@@ -14,5 +14,5 @@ EXPOSE 2376/tcp
 ENTRYPOINT ["dockerd-entrypoint.sh"]
 CMD []
 
-ENV DOCKER_VERSION=23.0.4
+ENV DOCKER_VERSION=27.3.1
 ENV DOCKER_TLS_CERTDIR='/certs'
